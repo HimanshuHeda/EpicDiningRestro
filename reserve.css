@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.active {
+    color: white;
+}
+
+body {
+    background-image: url('image/background.jpg');
+    background-repeat: repeat;
+    font-size: 16px;
+    line-height: 24px;
+    color: white;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    padding: 0px 40px;
+}
+
+.logo {
+    font-size: 40px;
+    color: rgb(245, 198, 70);
+}
+
+.nav {
+    position: relative;
+    left: -180px;
+}
+
+a {
+    padding: 5px 15px;
+    color: rgb(245, 201, 57);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+
+}
+
+.new {
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding-bottom: 20px;
+  }
+
+.box-form {
+    margin: 90px 190px;
+    width: 70%;
+    background: transparent;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex: 1 1 100%;
+    align-items: stretch;
+    justify-content: space-between;
+    box-shadow: 0 0 20px 6px #ff9720;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: 420px 420px;
+}
+
+.card-img {
+    background: url("card-img.jpg");
+}
+
+.new h2 {
+    color: lightgoldenrodyellow;
+    margin-left: -60px;
+    padding-bottom: 160px;
+    margin-bottom: 15px;
+}
+
+.card-content {
+    margin-left: -360px;
+    height: 360px;
+    padding: 90px 145px;
+    margin-right: -100px;
+    margin-top: -80px;
+}
+
+.card-content h6 {
+    text-align: center;
+    color: #ff8f00;
+    padding: 24px 55px 16px 1px;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.form-row {
+    display: flex;
+    width: 90%;
+    margin-top: 20px;
+}
+
+form select,
+form input {
+    display: block;
+    width: 100%;
+    margin: 15px 12px;
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-weight: 300;
+}
+
+form input[type=text],
+form input[type=number],
+form input::placeholder,
+select {
+    color: #9a9a9a;
+}
+
+form input[type=submit] {
+    color: #fff;
+    background: #f2745f;
+    padding: 12px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type=submit]:hover {
+    opacity: 0.9;
+}
+
+@media(max-width: 992px) {
+    .card-container {
+        grid-template-columns: 100%;
+        width: 100vw;
+    }
+
+    .card-img {
+        height: 330px;
+    }
+}
+
+.restaurant-footer {
+    font-size: 20px;
+    font-family: cursive;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 10px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.fa-brands,
+.fab {
+    font-family: "Font Awesome 6 Brands";
+    margin-top: 15px;
+    font-size: 30px;
+}
+
+.social-link {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact-us, .restaurant-timings, .feedback-form {
+    flex: 1;
+    margin-left: 65px;
+}
+
+.contact-us h3,
+.restaurant-timings h3,
+.feedback-form h3 {
+    font-family: cursive;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.feedback-form form {
+    text-align: center;
+}
+
+textarea {
+    width: 92%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: cursive;
+}
+
+.submit-button {
+    background-color: #FF5733;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #FF8C67;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reservation Form</title>
+    <link rel="stylesheet" href="reserve.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <?php
+    session_start();
+    if (!isset($_SESSION["email"]))
+        header("location:login.html");
+    ?>
+    <div class="top">
+        <div class="logo">Epic Dining Restro</div>
+        <div class="nav">
+            <a href="index.html">HOME</a>
+            <a href="menu.html">MENU</a>
+            <a href="Gallery.html">GALLERY</a>
+            <a href="reserve.html" class="active">RESERVE TABLE</a>
+            <?php
+            if (!isset($_SESSION["email"]))
+                echo "<a href='login.html'><i class='fa-solid fa-right-to-bracket'></i></a>";
+            else
+                echo "<a href='logout.php'><i class='fa-solid fa-right-from-bracket'></i></a>";
+            ?>
+        </div>
+    </div>
+
+    <div class="box-form">
+        <div class="new">
+            <div class="card-container">
+                <div class="card-img"> </div>
+                <div class="card-content">
+                    <h6>Reserve Table</h6>
+                    <form action="reserve.php" method="post">
+                        <div class="form-row">
+                            <select name="days">
+                                <option value="day-select" selected disabled>Select Day</option>
+                                <option value="monday">Monday</option>
+                                <option value="tuesday">Tuesday</option>
+                                <option value="wednesday">Wednesday</option>
+                                <option value="thursday">Thursday</option>
+                                <option value="friday">Friday</option>
+                                <option value="saturday">Saturday</option>
+                            </select>
+
+                            <input type="time" name="time" placeholder="Time">
+                        </div>
+
+                        <div class="form-row">
+                            <input type="text" name="name" placeholder="Full Name">
+                            <input type="text" name="contact" placeholder="Phone Number">
+                        </div>
+
+                        <div class="form-row">
+                            <input type="number" name="members" placeholder="How Many Persons?" min="1">
+                            <input type="submit" value="BOOK TABLE">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="restaurant-footer">
+        <div class="footer-container">
+            <div class="social-media">
+                <a href="https://www.facebook.com" class="fa-brands fa-facebook-f"></a><br>
+                <a href="https://twitter.com/i/flow/login" class="fa-brands fa-twitter"></a><br>
+                <a href="https://www.instagram.com" class="fa-brands fa-instagram"></a><br>
+                <a href="https://web.whatsapp.com" class="fa-brands fa-whatsapp"></a><br>
+            </div>
+
+            <div class="contact-us">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</p><br>
+                <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p><br>
+                <p><i class="far fa-envelope"></i> info@restaurant.com</p><br>
+            </div>
+
+            <div class="restaurant-timings">
+                <h3>Opening Hours</h3>
+                <p>Monday : 9:00 AM - 10:00 PM</p>
+                <p>Tuesday : 9:00 AM - 10:00 PM</p>
+                <p>Wednesday : 9:00 AM - 10:00 PM</p>
+                <p>Thursday : 9:00 AM - 10:00 PM</p>
+                <p>Friday : 9:00 AM - 10:00 PM</p>
+                <p>Saturday : 10:00 AM - 11:00 PM</p>
+                <p>Sunday : Closed</p>
+            </div>
+
+            <div class="feedback-form">
+                <h3>Feedback</h3>
+                <form>
+                    <textarea rows="4" placeholder="Your feedback..."></textarea>
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

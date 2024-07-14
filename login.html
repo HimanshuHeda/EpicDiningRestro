@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Epic Dining Restro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="top">
+        <div class="logo">Epic Dining Restro</div>
+        <div class="nav">
+            <a href="index.html">HOME</a>
+            <a href="menu.html">MENU</a>
+            <a href="Gallery.html">GALLERY</a>
+            <a href="reserve.html">RESERVE TABLE</a>
+            <?php
+            session_start();
+            if (!isset($_SESSION["email"]))
+                echo "<a href='login.html'><i class='fa-solid fa-right-to-bracket'></i></a>";
+            else
+                echo "<a href='logout.php'><i class='fa-solid fa-right-from-bracket'></i></a>";
+            ?>
+        </div>
+    </div>
+
+    <div class="box-form">
+        <div class="left">
+            <div class="overlay">
+                <h1>"Delight Your Palate Here!"</h1>
+                <div class="image">
+                    <img class="setborder" src="image/plate.jpg" alt="">
+                </div>
+                <p>"Unlock Exclusive Tastes with a Click!"</p>
+            </div>
+        </div>
+
+
+        <div class="right">
+            <h5>Login</h5>
+            <p>Don't have an account? <a href="signup.html"><br>Create Your Account</a></p>
+            <form action="login.php" method="post">
+                <div class="inputs">
+                    <input type="email" name="email" placeholder="Email">
+                    <br>
+                    <input type="password" name="pwd" placeholder="password">
+                </div><br><br><br>
+                <button type="submit" name="loginBtn">Login</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

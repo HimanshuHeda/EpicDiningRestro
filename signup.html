@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Epic Dining Restro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <div class="top">
+        <div class="logo">Epic Dining Restro</div>
+        <div class="nav">
+            <a href="index.html">HOME</a>
+            <a href="menu.html">MENU</a>
+            <a href="Gallery.html">GALLERY</a>
+            <a href="reserve.html">RESERVE TABLE</a>
+            <?php
+            if (!isset($_SESSION["email"]))
+                echo "<a href='login.html'><i class='fa-solid fa-right-to-bracket'></i></a>";
+            else
+                echo "<a href='logout.php'><i class='fa-solid fa-right-from-bracket'></i></a>";
+            ?>
+        </div>
+    </div>
+
+    <div class="box-form">
+        <div class="left">
+            <div class="overlay">
+                <h1>"Delight Your Palate Here!"</h1>
+                <div class="image">
+                    <img src="image/plate.jpg" alt="" style="border-radius: 50%;  margin-top: -85px;">
+                </div>
+                <p>"Unlock Exclusive Tastes with a Click!"</p>
+                <span>
+
+                </span>
+            </div>
+        </div>
+
+
+        <div class="right">
+            <form method="post" action="signup.php">
+                <h5>signup</h5>
+                <p>Back to <a href="login.html">Login</a></p>
+                <div class="inputs">
+                    <input type="text" name="name" placeholder="Name">
+                    <br>
+                    <input type="email" name="email" placeholder="Email">
+                    <br>
+                    <input type="password" name="pwd" placeholder="password">
+                    <br>
+                    <input type="password" name="cpwd" placeholder="confirm password">
+                    <br>
+                </div><br><br><br>
+                <button>signup</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

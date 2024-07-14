@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Epic Dining Restro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="menu.css">
+</head>
+
+<body>
+    <?php
+    session_start();
+    if (!isset($_SESSION["email"]))
+        header("location:login.html");
+    ?>
+    <div class="top">
+        <div class="logo">Epic Dining Restro</div>
+        <div class="nav">
+            <a href="index.html">HOME</a>
+            <a href="menu.html" class="active">MENU</a>
+            <a href="Gallery.html">GALLERY</a>
+            <a href="reserve.html">RESERVE TABLE</a>
+            <?php
+            if (!isset($_SESSION["email"]))
+                echo "<a href='login.html'><i class='fa-solid fa-right-to-bracket'></i></a>";
+            else
+                echo "<a href='logout.php'><i class='fa-solid fa-right-from-bracket'></i></a>";
+            ?>
+        </div>
+    </div>
+
+    <div class="category-buttons">
+        <button class="category-button" data-category="all">All</button>
+        <button class="category-button" data-category="breakfast">Breakfast</button>
+        <button class="category-button" data-category="lunch">Lunch</button>
+        <button class="category-button" data-category="dinner">Dinner</button>
+        <button class="category-button" data-category="drinks">Drinks</button>
+    </div>
+    <div class="menu">
+        <div class="menu_card" data-category="breakfast">
+            <h3>Breakfast</h3>
+            <ul>
+                <img src="image/breakfast1.jpg" alt="" style="width: 200px;">
+                <li>Classic Pancakes</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Classic Pancakes')" class="gallary_btn">Order Now</a>
+                <img src="image/breakfast2.jpg" alt="" style="width: 200px;">
+                <li>Eggs Benedict</li>
+                <p>₹140</p>
+                <a href="order.html" onclick="showBooking('Eggs Benedict')" class="gallary_btn">Order Now</a>
+                <img src="image/breakfast3.jpg" alt="" style="width: 200px;">
+                <li>Belgian Waffles</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Belgian Waffles')" class="gallary_btn">Order Now</a>
+                <img src="image/breakfast4.jpg" alt="" style="width: 200px;">
+                <li>Omelette</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Omelette')" class="gallary_btn">Order Now</a>
+                <img src="image/breakfast5.jpg" alt="" style="width: 200px;">
+                <li>French Toast with Maple Syrup</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('French Toast with Maple Syrup')" class="gallary_btn">Order
+                    Now</a>
+                <img src="image/breakfast6.jpg" alt="" style="width: 200px;">
+                <li>Smoked Salmon Bagel </li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Smoked Salmon Bagel')" class="gallary_btn">Order Now</a>
+                <img src="image/breakfast7.jpg" alt="" style="width: 200px;">
+                <li>Vegetarian Breakfast Burrito</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Vegetarian Breakfast Burrito')" class="gallary_btn">Order
+                    Now</a>
+                <img src="image/breakfast8.jpg" alt="" style="width: 200px;">
+                <li>Fruit Parfait with Yogurt and Granola</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Fruit Parfait with Yogurt and Granola')"
+                    class="gallary_btn">Order Now</a>
+                <img src="image/breakfast9.jpg" alt="" style="width: 200px;">
+                <li>Full English Breakfast</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Full English Breakfast')" class="gallary_btn">Order Now</a>
+            </ul>
+        </div>
+        <div class=" menu_card" data-category="lunch">
+            <h3>Lunch</h3>
+            <ul>
+                <img src="image/lunch1.jpg" alt="" style="width: 200px;">
+                <li>Chicken Caesar Salad</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Chicken Caesar Salad')" class="gallary_btn">Order Now</a>
+                <img src="image/lunch2.jpg" alt="" style="width: 200px;">
+                <li>Margherita Pizza</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Margherita Pizza')" class="gallary_btn">Order Now</a>
+                <img src="image/lunch3.jpg" alt="" style="width: 200px;">
+                <li>Grilled Chicken Sandwich</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Grilled Chicken Sandwich')" class="gallary_btn">Order Now</a>
+                <img src="image/lunch4.jpg" alt="" style="width: 200px;">
+                <li>Spaghetti Bolognese</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Spaghetti Bolognese')" class="gallary_btn">Order Now</a>
+                <img src="image/lunch5.jpg" alt="" style="width: 200px;">
+                <li>Caprese Salad with Fresh Mozzarella</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Caprese Salad with Fresh Mozzarella')"
+                    class="gallary_btn">Order Now</a>
+                <img src="image/lunch6.jpg" alt="" style="width: 200px;">
+                <li>Vegetarian Wrap with Hummus</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Vegetarian Wrap with Hummus')" class="gallary_btn">Order
+                    Now</a>
+                <img src="image/lunch7.jpg" alt="" style="width: 200px;">
+                <li>Shrimp Scampi Pasta</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Shrimp Scampi Pasta')" class="gallary_btn">Order Now</a>
+                <img src="image/lunch8.jpg" alt="" style="width: 200px;">
+                <li>Mushroom and Spinach Quiche</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Mushroom and Spinach Quiche')" class="gallary_btn">Order
+                    Now</a>
+                <img src="image/lunch9.jpg" alt="" style="width: 200px;">
+                <li>Teriyaki Salmon Bowl</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Teriyaki Salmon Bowl')" class="gallary_btn">Order Now</a>
+            </ul>
+        </div>
+        <div class="menu_card" data-category="dinner">
+            <h3>Dinner</h3>
+            <ul>
+                <img src="image/dinner1.jpg" alt="" style="width: 200px;">
+                <li>Lobster Thermidor</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Lobster Thermidor')" class="gallary_btn">Order Now</a>
+                <img src="image/dinner2.jpg" alt="" style="width: 200px;">
+                <li>Chicken Alfredo Pasta</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Chicken Alfredo Pasta')" class="gallary_btn">Order Now</a>
+                <img src="image/dinner3.jpg" alt="" style="width: 200px;">
+                <li>Vegetable Ratatouille</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Vegetable Ratatouille')" class="gallary_btn">Order Now</a>
+                <img src="image/dinner4.jpg" alt="" style="width: 200px;">
+                <li>Eggplant Parmesan</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Eggplant Parmesan')" class="gallary_btn">Order Now</a>
+                <img src="image/dinner5.jpg" alt="" style="width: 200px;">
+                <li>Dal Baati Churma</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Dal Baati Churma')" class="gallary_btn">Order Now</a>
+                <img src="image/dinner6.jpg" alt="" style="width: 200px;">
+                <li>Curry Leaves Rice</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Curry Leaves Rice')" class="gallary_btn">Order Now</a>
+                <img src="image/dinner7.jpg" alt="" style="width: 200px;">
+                <li>Biryani</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Biryani')" class="gallary_btn">Order Now</a>
+                <img src="image/dinner8.jpg" alt="" style="width: 200px;">
+                <li>Chettinad Chicken Curry</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Chettinad Chicken Curry')" class="gallary_btn">Order Now</a>
+                <img src="image/dinner9.jpg" alt="" style="width: 200px;">
+                <li>Indian thali</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Indian thali')" class="gallary_btn">Order Now</a>
+            </ul>
+        </div>
+        <div class="menu_card" data-category="drinks">
+            <h3>Drinks</h3>
+            <ul>
+                <img src="image/drink1.jpg" alt="" style="width: 200px;">
+                <li>Margarita</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Margarita')" class="gallary_btn">Order Now</a>
+                <img src="image/drink2.jpg" alt="" style="width: 200px;">
+                <li>Cosmopolitan</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Cosmopolitan')" class="gallary_btn">Order Now</a>
+                <img src="image/drink3.jpg" alt="" style="width: 200px;">
+                <li>Moscow Mule</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Moscow Mule')" class="gallary_btn">Order Now</a>
+                <img src="image/drink4.jpg" alt="" style="width: 200px;">
+                <li>Paloma</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Paloma')" class="gallary_btn">Order Now</a>
+                <img src="image/drink5.jpg" alt="" style="width: 200px;">
+                <li>Espresso Elegance</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Espresso Elegance')" class="gallary_btn">Order Now</a>
+                <img src="image/drink6.jpg" alt="" style="width: 200px;">
+                <li>Caramel Bliss Latte</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Caramel Bliss Latte')" class="gallary_btn">Order Now</a>
+                <img src="image/drink7.jpg" alt="" style="width: 200px;">
+                <li>Vanilla Dream Cappuccino</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Vanilla Dream Cappuccino')" class="gallary_btn">Order Now</a>
+                <img src="image/drink8.jpg" alt="" style="width: 200px;">
+                <li>Coconut Bliss Coffee</li>
+                <p>₹100</p>
+                <a href="order.html" onclick="showBooking('Coconut Bliss Coffee')" class="gallary_btn">Order Now</a>
+        </div>
+        <script>
+            function showBooking(dishName) {
+                localStorage.setItem('selectedDish', dishName);
+            }
+        </script>
+    </div>
+
+    <footer class="restaurant-footer">
+        <div class="footer-container">
+            <div class="social-media">
+                <a href="https://www.facebook.com" class="fa-brands fa-facebook-f"></a><br>
+                <a href="https://twitter.com/i/flow/login" class="fa-brands fa-twitter"></a><br>
+                <a href="https://www.instagram.com" class="fa-brands fa-instagram"></a><br>
+                <a href="https://web.whatsapp.com" class="fa-brands fa-whatsapp"></a><br>
+            </div>
+
+            <div class="contact-us">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</p><br>
+                <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p><br>
+                <p><i class="far fa-envelope"></i> info@restaurant.com</p><br>
+            </div>
+
+            <div class="restaurant-timings">
+                <h3>Opening Hours</h3>
+                <p>Monday : 9:00 AM - 10:00 PM</p>
+                <p>Tuesday : 9:00 AM - 10:00 PM</p>
+                <p>Wednesday : 9:00 AM - 10:00 PM</p>
+                <p>Thursday : 9:00 AM - 10:00 PM</p>
+                <p>Friday : 9:00 AM - 10:00 PM</p>
+                <p>Saturday : 10:00 AM - 11:00 PM</p>
+                <p>Sunday : Closed</p>
+            </div>
+
+            <div class="feedback-form">
+                <h3>Feedback</h3>
+                <form>
+                    <textarea rows="4" placeholder="Your feedback..."></textarea>
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const categoryButtons = document.querySelectorAll('.category-button');
+            const menuCards = document.querySelectorAll('.menu_card');
+
+            categoryButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const selectedCategory = button.getAttribute('data-category');
+
+                    menuCards.forEach((card) => {
+                        const category = card.getAttribute('data-category');
+
+                        if (selectedCategory === 'all' || selectedCategory === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            menuCards.forEach((card) => {
+                card.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+
+</html>

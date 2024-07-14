@@ -1,0 +1,205 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+.active {
+    color: white;
+}
+
+body {
+    width: 100%;
+    height: 97%;
+    background-image: url('image/background.jpg');
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    padding: 0px 40px;
+}
+
+.logo {
+    font-size: 40px;
+    color: rgb(245, 198, 70);
+}
+
+.nav {
+    position: relative;
+    left: -180px;
+}
+
+a {
+    padding: 5px 15px;
+    color: rgb(245, 201, 57);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.order {
+    width: 100%;
+    height: 100vh;
+    padding: 70px 0;
+}
+
+.order h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 55px;
+}
+
+.order h1 span {
+    color: #fac031;
+    margin-right: -430px;
+}
+
+.order h1 span::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #fac031;
+    display: block;
+    position: relative;
+    bottom: 15px;
+}
+
+.order .order_main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.order .order_main .order_image img {
+    width: 400px;
+}
+
+.order .order_main form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 10px;
+}
+
+.order .order_main form .input p {
+    line-height: 25px;
+}
+
+.order .order_main form .input {
+    margin: 5px;
+}
+
+.order .order_main form .input input {
+    width: 240px;
+    height: 30px;
+    padding: 5px 15px;
+    border: 6px solid #cccccc;
+    background: black;
+    outline: none;
+    border-radius: 30px;
+}
+
+.order .order_main form .input input:focus {
+    border: 2px solid #fac031;
+}
+
+.order .order_main form .order_btn {
+    padding: 10px 0;
+    background: #ffffff;
+    color: black;
+    width: 40%;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-left: 250px;
+}
+
+.restaurant-footer {
+    font-size: 20px;
+    font-family: cursive;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 10px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.fa-brands, .fab {
+    font-family: "Font Awesome 6 Brands";
+    margin-top: 15px;
+    font-size: 30px;
+}
+
+.social-link {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact-us, .restaurant-timings, .feedback-form {
+    flex: 1;
+    margin-left: 65px;
+  }
+
+.contact-us h3,
+.restaurant-timings h3,
+.feedback-form h3 {
+    font-family: cursive;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.feedback-form form {
+    text-align: center;
+}
+
+textarea {
+    width: 92%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: cursive;
+}
+
+.submit-button {
+    background-color: #FF5733;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #FF8C67;
+}
+
+.submit-button {
+    background-color: #FF5733;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #FF8C67;
+}
